@@ -77,7 +77,7 @@ so there is no code path that could deploy `danger-full-access` to a laptop.
 
 - **Interactive Codex home-manager module.** Migrating the interactive
   `programs.codex` module (settings, MCP servers, permission lists) is a
-  documented follow-up, not part of v0. See [`modules/README.md`](modules/README.md).
+  documented follow-up, not part of v0. See [`modules/ROADMAP.md`](modules/ROADMAP.md).
 
 ## Validation
 

@@ -1,4 +1,4 @@
-# modules/ — reserved for the interactive Codex module
+# modules/ roadmap — reserved for the interactive Codex module
 
 Empty in v0, on purpose.
 

@@ -34,9 +34,9 @@ bytes must update the check in the same commit.
 | ---------------------------- | -------------------------------------------- |
 | `lib/render-autonomous.nix`  | The pure renderer (`config.toml` + rules)    |
 | `checks/`                    | Derivation-based assertions on rendered text |
-| `modules/`                   | Placeholder — see `modules/README.md`        |
+| `modules/`                   | Placeholder — see `modules/ROADMAP.md`       |
 
 ## Follow-up work
 
 Migrating the interactive `programs.codex` home-manager module is deliberately
-out of scope for v0. See `modules/README.md` before starting it.
+out of scope for v0. See `modules/ROADMAP.md` before starting it.

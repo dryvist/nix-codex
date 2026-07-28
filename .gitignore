@@ -1,3 +1,6 @@
-.direnv/
 result
 result-*
+.direnv/
+.envrc.local
+
+.DS_Store
