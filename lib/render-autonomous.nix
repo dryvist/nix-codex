@@ -58,8 +58,7 @@ let
 
   supportedCommands = cmds: lib.filter commandIsRepresentable cmds;
 
-  skippedCommands =
-    cmds: builtins.length cmds - builtins.length (supportedCommands cmds);
+  skippedCommands = cmds: builtins.length cmds - builtins.length (supportedCommands cmds);
 
   formatPrefixRule =
     decision: cmd: "prefix_rule(${builtins.toJSON (tokenizeCommand cmd)}, ${builtins.toJSON decision})";
