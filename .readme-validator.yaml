@@ -1,0 +1,12 @@
+# README validation config for nix-codex.
+# The root README is a usage guide for adopters of the flake.
+required_sections:
+  - Installation
+  - Usage
+optional_sections:
+  - API
+  - Roadmap
+  - Validation
+  - Compatibility
+  - Contributing
+  - License
