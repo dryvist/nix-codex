@@ -1,3 +1,6 @@
+---
+skill-groups: [core, nix]
+---
 # nix-codex - AI Agent Instructions
 
 Declarative Codex CLI configuration in Nix. v0 exposes one pure renderer for
