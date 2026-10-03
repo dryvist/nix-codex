@@ -21,5 +21,9 @@
       checks = forAllSystems (pkgs: import ./checks/autonomous-profile.nix { inherit pkgs self; });
 
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
+
+      devShells = forAllSystems (pkgs: {
+        default = pkgs.mkShell { packages = [ pkgs.nixfmt-tree ]; };
+      });
     };
 }
