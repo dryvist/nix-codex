@@ -18,7 +18,13 @@
     {
       lib.renderAutonomous = args: import ./lib/render-autonomous.nix ({ inherit lib; } // args);
 
-      checks = forAllSystems (pkgs: import ./checks/autonomous-profile.nix { inherit pkgs self; });
+      homeModules.approvals.imports = [ ./modules/approvals.nix ];
+
+      checks = forAllSystems (
+        pkgs:
+        (import ./checks/autonomous-profile.nix { inherit pkgs self; })
+        // (import ./checks/approvals.nix { inherit pkgs self; })
+      );
 
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
 

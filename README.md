@@ -67,11 +67,26 @@ rule that would match the wrong argv, and the count is recorded in the rules
 file header (`Unsupported shell-only patterns were skipped: N`). Use
 `supportedCommands` if you need to know which entries survived.
 
-### Not a home-manager module — on purpose
+### Approval options
 
-The autonomous profile assumes a container is the isolation boundary. Nothing
-here renders onto a host filesystem, and no home-manager module is exported,
-so there is no code path that could deploy `danger-full-access` to a laptop.
+`homeModules.approvals` declares `programs.codex.approvalPolicy` (default
+`"on-request"`) and `programs.codex.approvalsReviewer` (default `"user"`). It
+only declares options: consumers own TOML rendering and activation.
+
+```nix
+{
+  imports = [ inputs.nix-codex.homeModules.approvals ];
+  programs.codex = {
+    approvalPolicy = "on-request";
+    approvalsReviewer = "auto_review";
+  };
+}
+```
+
+This selects Codex's **Approve for me** setting when a consumer renders the
+options as `approval_policy` and `approvals_reviewer`. Ordinary explicit Nix
+definitions override the option defaults. The autonomous renderer remains
+separate and writes no host files.
 
 ## Roadmap
 
