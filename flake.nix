@@ -19,9 +19,12 @@
       lib.mkLauncher = import ./lib/mk-launcher.nix;
       lib.renderAutonomous = args: import ./lib/render-autonomous.nix ({ inherit lib; } // args);
 
+      homeModules.approvals.imports = [ ./modules/approvals.nix ];
+
       checks = forAllSystems (
         pkgs:
         (import ./checks/autonomous-profile.nix { inherit pkgs self; })
+        // (import ./checks/approvals.nix { inherit pkgs self; })
         // {
           launcher = import ./checks/launcher.nix {
             inherit pkgs;
