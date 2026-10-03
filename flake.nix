@@ -16,6 +16,7 @@
       forAllSystems = f: lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
     in
     {
+      lib.mkLauncher = import ./lib/mk-launcher.nix;
       lib.renderAutonomous = args: import ./lib/render-autonomous.nix ({ inherit lib; } // args);
 
       homeModules.approvals.imports = [ ./modules/approvals.nix ];
@@ -24,6 +25,12 @@
         pkgs:
         (import ./checks/autonomous-profile.nix { inherit pkgs self; })
         // (import ./checks/approvals.nix { inherit pkgs self; })
+        // {
+          launcher = import ./checks/launcher.nix {
+            inherit pkgs;
+            inherit (self.lib) mkLauncher;
+          };
+        }
       );
 
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
