@@ -1,8 +1,8 @@
 # nix-codex - AI Agent Instructions
 
 Declarative Codex CLI configuration in Nix. v0 exposes one pure renderer for
-the autonomous (container-baked) Codex profile; nothing here touches a host
-filesystem.
+the autonomous (container-baked) Codex profile and an options-only approval
+module; nothing here touches a host filesystem.
 
 ## Critical constraints
 
@@ -34,7 +34,7 @@ bytes must update the check in the same commit.
 | ---------------------------- | -------------------------------------------- |
 | `lib/render-autonomous.nix`  | The pure renderer (`config.toml` + rules)    |
 | `checks/`                    | Derivation-based assertions on rendered text |
-| `modules/`                   | Placeholder — see `modules/ROADMAP.md`       |
+| `modules/`                   | Approval options — see `modules/ROADMAP.md`  |
 
 ## Follow-up work
 
