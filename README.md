@@ -20,7 +20,7 @@ your own `residualDeny` list and you get your own files.
 
 ```nix
 {
-  inputs.nix-codex.url = "github:dryvist/nix-codex";
+  inputs.nix-codex.url = "github:dryvist/nix-codex?ref=vN";
 }
 ```
 
