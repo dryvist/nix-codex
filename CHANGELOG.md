@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/dryvist/nix-codex/compare/v1.0.0...v1.0.1) (2026-10-17)
+
+
+### Bug Fixes
+
+* **ci:** run the release caller on label and close events ([#54](https://github.com/dryvist/nix-codex/issues/54)) ([93066d8](https://github.com/dryvist/nix-codex/commit/93066d88ff34161dd5436d32e554956877cbc2a5))
+
 ## 1.0.0 (2026-10-11)
 
 
